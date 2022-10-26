@@ -4,11 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './Header.css'
 
-import { FaStaylinked } from "react-icons/fa";
+import { FaStaylinked, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { Button } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 
 const Header = () => {
     const { user } = useContext(AuthContext);
@@ -49,7 +49,7 @@ const Header = () => {
 
                         </Nav> */}
 
-                        <Nav.Link eventKey={2} href="#">
+                        <Nav.Link href="#">
 
                             {
                                 user?.uid ?
@@ -62,6 +62,15 @@ const Header = () => {
                                         <Link className='log' to='/login'>Login</Link>
                                         <Link className='register' to='/register'>Register</Link>
                                     </>
+
+                            }
+                            {user?.photoURL ?
+                                <Image
+                                    style={{ height: '30px', marginLeft: '10px' }}
+                                    roundedCircle
+                                    src={user?.photoURL}>
+                                </Image>
+                                : <FaUser></FaUser>
                             }
 
                         </Nav.Link>
