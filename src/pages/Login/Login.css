@@ -1,0 +1,13 @@
+.google-btn {
+    margin-top: 10px;
+}
+
+.login-page {
+    margin: 50px auto;
+    width: 50%;
+    border: 1px solid green;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px rgb(135, 204, 135);
+
+}
