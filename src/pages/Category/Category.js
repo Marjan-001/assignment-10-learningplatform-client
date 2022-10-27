@@ -8,7 +8,7 @@ const Category = () => {
     console.log(categories)
     return (
         <div className='mt-5  '>
-            <h2>this category</h2>
+
 
             {
                 categories.map(category => <CategoryBar key={category.category_id} category={category}></CategoryBar>)

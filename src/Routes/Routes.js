@@ -51,7 +51,8 @@ export const routes = createBrowserRouter([
 
             },
             {
-                path: '/coursedetails',
+                path: '/category/:id',
+                loader: ({ params }) => fetch(`https://assignment-10-learning-platform-server.vercel.app/category/${params.id}`),
                 element: <CourseDetails></CourseDetails>
             }
         ]

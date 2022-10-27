@@ -7,7 +7,7 @@ const CategoryBar = ({ category }) => {
     return (
 
         <div className='list'>
-            <Link to='/coursedetails'>{category.name}</Link>
+            <Link to={`/category/${category.category_id}`}>{category.name}</Link>
         </div>
     );
 
