@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css'
@@ -11,6 +12,11 @@ const Login = () => {
     const [error, setError] = useState('');
     const { signIn, setLoading } = useContext(AuthContext);
     const { providerLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
 
 
     const handleSubmit = event => {
@@ -24,6 +30,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.error(error)
