@@ -14,6 +14,7 @@ const Header = () => {
     const { user } = useContext(AuthContext);
 
     const { logOut } = useContext(AuthContext);
+    const { theme, toggleTheme } = useContext(AuthContext);
 
     const handleLogOut = () => {
         logOut()
@@ -43,6 +44,9 @@ const Header = () => {
                             <Link className="log" to='/blog'>Blog</Link>
 
                         </Nav>
+                        <div className="header-toggle-buttons">
+                            <button onClick={() => toggleTheme()}>{theme}</button>
+                        </div>
                         {/* <Nav className='me-3' >
                             <Link className='log' to='/login'>Login</Link>
                             <Link className='register' to='register'>Register</Link>

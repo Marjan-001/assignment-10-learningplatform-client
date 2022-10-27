@@ -4,9 +4,22 @@ import app from '../../firebase/firebase.config'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+// const ThemeContext = createContext();
+
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
+const getTheme = () => {
+    const theme = localStorage.getItem("theme");
+    if (!theme) {
+        // Default theme is taken as dark-theme
+        localStorage.setItem("theme", "dark-theme");
+        return "dark-theme";
+    } else {
+        return theme;
+    }
+};
+
 
 
 const AuthProvider = ({ children }) => {
@@ -52,8 +65,27 @@ const AuthProvider = ({ children }) => {
             unsubscribe();
         }
     }, [])
+    const [theme, setTheme] = useState(getTheme);
 
-    const authInfo = { user, providerLogin, logOut, createUser, loading, setLoading, updateUserProfile, signIn }
+    function toggleTheme() {
+        if (theme === "dark-theme") {
+            setTheme("light-theme");
+        } else {
+            setTheme("dark-theme");
+        }
+    };
+
+    useEffect(() => {
+        const refreshTheme = () => {
+            localStorage.setItem("theme", theme);
+        };
+
+        refreshTheme();
+    }, [theme]);
+
+
+
+    const authInfo = { theme, setTheme, toggleTheme, user, providerLogin, logOut, createUser, loading, setLoading, updateUserProfile, signIn }
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 
 const CourseCard = ({ c }) => {
@@ -12,7 +12,7 @@ const CourseCard = ({ c }) => {
                     <Card.Title>{c.name}</Card.Title>
                     <Card.Title>Course Fee:{c.price}</Card.Title>
 
-                    <Button variant="primary">Go somewhere </Button>
+
                 </Card.Body>
             </Card>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './CourseDetails.css'
 const CourseDetails = () => {
     const details = useLoaderData();
@@ -30,9 +30,9 @@ const CourseDetails = () => {
                                 <ListGroup.Item>{details.features[3]}</ListGroup.Item>
 
                             </ListGroup>
-                            <Button variant="success">Checkout</Button>
+                            <Link to='/checkout'><Button variant="success">Get Premium Access</Button>
 
-
+                            </Link>
                         </Card>
                     </Col>
                     <Col lg='3'>

@@ -2,12 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
 import Blog from "../pages/Blog/Blog";
 import Category from "../pages/Category/Category";
+import Checkout from "../pages/CheckOut/Checkout";
 import CourseDetails from "../pages/courseDetails/CourseDetails";
 import Courses from "../pages/Courses/Courses";
 import FAQ from "../pages/FAQ/FAQ";
 import Home from "../pages/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -54,6 +56,10 @@ export const routes = createBrowserRouter([
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`https://assignment-10-learning-platform-server.vercel.app/category/${params.id}`),
                 element: <CourseDetails></CourseDetails>
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
             }
         ]
 
