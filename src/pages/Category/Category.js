@@ -7,8 +7,9 @@ const Category = () => {
     const categories = useLoaderData();
     console.log(categories)
     return (
-        <div>
-            <h2>category{categories.length}</h2>
+        <div className='mt-5  '>
+            <h2>this category</h2>
+
             {
                 categories.map(category => <CategoryBar key={category.category_id} category={category}></CategoryBar>)
             }

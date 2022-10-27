@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CategoryBar.css'
 
 const CategoryBar = ({ category }) => {
 
     return (
+
         <div className='list'>
-            <span>{category.name}</span>
+            <Link to='/coursedetails'>{category.name}</Link>
         </div>
     );
+
 };
 
 export default CategoryBar;

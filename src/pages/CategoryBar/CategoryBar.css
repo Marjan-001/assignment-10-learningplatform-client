@@ -8,4 +8,14 @@
     font-size: 22px;
     border-radius: 10px;
     background-color: rgb(177, 219, 177);
+
+}
+
+.text {
+    text-decoration: none;
+}
+
+.list:hover {
+    color: rgb(1, 29, 1);
+    background-color: darkgreen;
 }
