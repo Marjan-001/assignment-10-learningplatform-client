@@ -1,3 +1,24 @@
+## Project Name
+Code Smashers
+## Project Details
+This project is based on programming language learning course.
+## Feature Of The Project
+"*" Login with Email and Password
+"*" Firebase Authentication
+"*" Signin  with google
+"*" Registration
+"*" Course Details and Checkout
+## Libraries
+React-bootstrap,Vanila Css
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
