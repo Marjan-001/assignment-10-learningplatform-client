@@ -9,7 +9,7 @@ This project is based on programming language learning course.
 "*" Registration
 "*" Course Details and Checkout
 ## Libraries
-React-bootstrap,Vanila Css
+React-bootstrap, Vanila Css
 
 
 
